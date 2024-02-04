@@ -32,6 +32,7 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::put('update/profile', [UserController::class, 'updateUserInfos']);
     Route::put('update/password', [UserController::class, 'updateUserPassword']);
     Route::get('user/articles', [ArticleController::class, 'fetchByUser']);
+
     //articles routes
     Route::get('followings/articles', [ArticleController::class, 'fetchFollowingsArticles']);
     Route::post('add/article', [ArticleController::class, 'store']);

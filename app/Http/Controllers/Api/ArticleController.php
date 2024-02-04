@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Tag;
-use App\Models\User;
 use App\Models\Article;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\File;
 use App\Http\Resources\ArticleResource;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
+use App\Http\Resources\UserResource;
+use App\Models\Tag;
 
 class ArticleController extends Controller
 {
@@ -127,7 +126,6 @@ class ArticleController extends Controller
             $article->delete();
             //return the response
             return response()->json([
-                'user' => UserResource::make($request->user()),
                 'message' => 'Article has been deleted.'
             ]);
         }else {
