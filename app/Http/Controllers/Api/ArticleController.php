@@ -126,6 +126,7 @@ class ArticleController extends Controller
             $article->delete();
             //return the response
             return response()->json([
+                'user' => UserResource::make($request->user()),
                 'message' => 'Article has been deleted.'
             ]);
         }else {
